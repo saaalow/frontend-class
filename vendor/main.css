@@ -22,38 +22,29 @@ div {
   width: 500px;
 }
 
-#output {
+.round-box {
   border: 1px solid #AAA;
   border-radius: 3px;
-  width: 100%;
-  min-height: 100px;
-  margin-bottom: 20px;
 }
 
-#run {
-  width: 100px;
-  height: 40px;
-  border: none;
-
+.shade-button {
   background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
   background: -moz-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
   background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
   background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
   background: linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
 
-  border-radius: 3px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 20px;
   color: #444;
   box-shadow: 0 0 2px #888;
-  float: right;
 }
 
-#run:hover {
-  box-shadow: 0 0 4px #999;
+.shade-button:hover {
+  box-shadow: 0 0 5px #999;
   cursor: pointer;
 }
-#run:active {
+.shade-button:active {
   box-shadow: 0 0 1px #000;
 }
 
@@ -62,4 +53,17 @@ code {
 }
 .error {
   color: red;
+}
+
+#output {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+
+#run {
+  width: 100px;
+  height: 40px;
+
+  float: right;
 }
