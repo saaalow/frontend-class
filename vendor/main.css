@@ -48,13 +48,13 @@ div {
   box-shadow: 0 0 1px #000;
 }
 
-code {
+.println {
   display: block;
 }
-code.error {
+.error {
   color: #F00;
 }
-code.success {
+.success {
   color: #0B0;
 }
 
