@@ -1,0 +1,65 @@
+/*
+ * Resets
+ * ------
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Styles
+ * ------
+ */
+
+#container {
+  margin: 0 auto;
+  width: 500px;
+}
+
+#output {
+  border: 1px solid #AAA;
+  border-radius: 3px;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+
+#run {
+  width: 100px;
+  height: 40px;
+  border: none;
+
+  background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+  background: -moz-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+  background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+  background: linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+
+  border-radius: 3px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: #444;
+  box-shadow: 0 0 2px #888;
+  float: right;
+}
+
+#run:hover {
+  box-shadow: 0 0 4px #999;
+  cursor: pointer;
+}
+#run:active {
+  box-shadow: 0 0 1px #000;
+}
+
+code {
+  display: block;
+}
+.error {
+  color: red;
+}
