@@ -6,10 +6,12 @@
   var runHandlers = function() {
     var index, length;
     output.innerHTML = '';
+
     try {
       for(index = 0, length = handlers.length; index < length; index++) {
         handlers[index]();
       }
+      output.innerHTML += '<code class=success>Program finished successfully!</code>';
     } catch(e) {
       output.innerHTML += '<code class=error>' + e + '</code>';
     }
@@ -27,4 +29,6 @@
   window.println = function(text) {
     output.innerHTML += '<code>' + text + '</code>';
   };
+
+
 }(window);

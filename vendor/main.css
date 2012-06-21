@@ -37,11 +37,11 @@ div {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 20px;
   color: #444;
-  box-shadow: 0 0 2px #888;
+  box-shadow: 0 0 1px #888;
 }
 
 .shade-button:hover {
-  box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 4px #999;
   cursor: pointer;
 }
 .shade-button:active {
@@ -51,14 +51,18 @@ div {
 code {
   display: block;
 }
-.error {
-  color: red;
+code.error {
+  color: #F00;
+}
+code.success {
+  color: #0B0;
 }
 
 #output {
   width: 100%;
   min-height: 100px;
   margin-bottom: 20px;
+  padding: 2px 4px;
 }
 
 #run {
