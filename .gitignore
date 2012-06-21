@@ -3,3 +3,4 @@
 *.swo
 *.swc
 .DS_Store
+*.tmproj
