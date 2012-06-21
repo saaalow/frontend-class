@@ -1,4 +1,4 @@
-frontend-class
+Frontend Class
 ==============
 
 Learnin javascripts
