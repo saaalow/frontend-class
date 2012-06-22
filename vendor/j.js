@@ -76,7 +76,6 @@
       this.show();
       this.reflow();
       this.style(key, computedStyle);
-      console.log(computedStyle);
       return this;
     },
     on: function(evt, handler) {
