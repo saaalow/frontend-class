@@ -1,7 +1,9 @@
 !function(window) {
-  var output = document.getElementById('output'),
+  var output = J('#output'),
+      originalHeight = output.height(),
       runButton = document.getElementById('run'),
       handlers = [];
+  output.updateStyle('height');
 
   var runHandlers = function() {
     var index, length;
@@ -11,38 +13,45 @@
         for(index = 0, length = handlers.length; index < length; index++) {
           handlers[index]();
         }
-        output.innerHTML += '<code class=success>Program finished successfully!</code>';
+        output.append('<code class=success>Program finished successfully!</code>');
       } catch(e) {
-        output.innerHTML += '<code class=error>' + e + '</code>';
+        output.append('<code class=error>' + e + '</code>');
       }
     });
   };
 
   var animateDisplay = function(cbk) {
-    var dots = 0;
+    var height,
+        dots = 0;
     var placeDot = function() {
-      output.innerHTML += '<code>.</code>';
+      output.append('<code>.</code>');
       dots++;
       setTimeout(function() {
         if(dots < 3) {
           placeDot();
         } else {
-          clearDisplay();
+          resetDisplay();
           cbk();
+          output.updateStyle('height');
         }
       }, 200);
     };
     
-    clearDisplay();
-    placeDot();
+    resetDisplay(placeDot);
   };
 
-  var clearDisplay = function() {
-    output.innerHTML = '';
+  var resetDisplay = function(handler) {
+    output.html('');
+    var current = output.height();
+    if(!handler) handler = function() {};
+    if(originalHeight === current) return handler();
+
+    output.height(originalHeight);
+    output.once('transitionend', handler);
   };
 
   window.println = function(text) {
-    output.innerHTML += '<code class=println>' + text + '</code>';
+    output.append('<code class=println>' + text + '</code>');
   };
 
   window.frontendClass = function(handler) {
@@ -52,5 +61,6 @@
   runButton.addEventListener('click', runHandlers);
   window.addEventListener('keypress', function(e) {
     if(e.which === 13) runHandlers();
+    else if(e.which === 99) resetDisplay();
   });
 }(window);

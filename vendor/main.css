@@ -4,11 +4,13 @@
  */
 
 * {
-  box-sizing: border-box;
 }
 
 div {
   margin: 0;
+  padding: 0;
+}
+button {
   padding: 0;
 }
 
@@ -48,6 +50,14 @@ div {
   box-shadow: 0 0 1px #000;
 }
 
+.slide-box {
+  -webkit-transition: height 0.15s linear 0s;
+     -moz-transition: height 0.15s linear 0s;
+      -ms-transition: height 0.15s linear 0s;
+       -o-transition: height 0.15s linear 0s;
+          transition: height 0.15s linear 0s;
+}
+
 .println {
   display: block;
 }
@@ -59,10 +69,11 @@ div {
 }
 
 #output {
-  width: 100%;
-  min-height: 100px;
-  margin-bottom: 20px;
+  width: 492px;
+  min-height: 80px;
+  margin-bottom: 10px;
   padding: 2px 4px;
+  overflow-y:hidden;
 }
 
 #run {
